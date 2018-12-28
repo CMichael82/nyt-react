@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
@@ -10,7 +10,8 @@ class Articles extends Component {
 		results: [],
 		topic: "",
 		startYear: "",
-		endYear: ""
+		endYear: "",
+		saved: false,
 	};
 
 
@@ -18,11 +19,13 @@ class Articles extends Component {
 		console.log(article);
 		API.saveArticle({
 			title: article.title,
-		  url: article.url,
-		  datePublished: article.date
+			url: article.url,
+			datePublished: article.date,
 		})
-		.then(res=> this.loadArticles())
-		.catch(err=> console.log(err));
+			.then(() => this.setState(() => ({
+				saved: true
+			})))
+			.catch(err => console.log(err));
 	}
 
 	// deleteArticle = id => {
@@ -54,6 +57,10 @@ class Articles extends Component {
 	};
 
 	render() {
+
+		if (this.state.saved === true) {
+			return <Redirect to='/saved' />
+		}
 		return (
 			<Container>
 				<Row>

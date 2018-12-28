@@ -11,7 +11,7 @@ export const ListItem = props => (
 				<a rel="noreferrer noopener" target="_blank" href={props.href}>
 					Go to Article!
           </a>
-				<SaveBtn onClick={()=>props.saveArticle({title: props.headline, url: props.href, date: props.published})}></SaveBtn>
+				<SaveBtn onClick={()=>props.saveArticle({title: props.headline, url: props.href, date: props.published})} ></SaveBtn>
 			</Row>
 		</Container>
 	</li>

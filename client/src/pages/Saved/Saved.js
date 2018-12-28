@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { Row, Container } from "../../components/Grid";
 import { List, SavedItem } from "../../components/List";
 import API from "../../utils/API";
