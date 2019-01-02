@@ -19,7 +19,6 @@ class Articles extends Component {
 		saved: false,
 	};
 
-
 	saveArticle = article => {
 		console.log(article);
 		API.saveArticle({
@@ -32,12 +31,6 @@ class Articles extends Component {
 			})))
 			.catch(err => console.log(err));
 	}
-
-	// deleteArticle = id => {
-	// 	API.deleteArticle(id)
-	// 		.then(res => this.loadArticles())
-	// 		.catch(err => console.log(err));
-	// };
 
 	handleInputChange = event => {
 		const { name, value } = event.target;
