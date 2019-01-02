@@ -5,6 +5,11 @@ import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
 
+const styles = {
+	backgroundColor:'#577292',
+	paddingLeft: "10px"
+};
+
 class Articles extends Component {
 	state = {
 		results: [],
@@ -20,7 +25,7 @@ class Articles extends Component {
 		API.saveArticle({
 			title: article.title,
 			url: article.url,
-			datePublished: article.date,
+			date: article.date,
 		})
 			.then(() => this.setState(() => ({
 				saved: true
@@ -62,37 +67,41 @@ class Articles extends Component {
 			return <Redirect to='/saved' />
 		}
 		return (
-			<Container>
+			<Container>		
 				<Row>
-					<h1>SEARCH:</h1>
+					<h3 style={{textAlign: "center"}}>SEARCH:</h3>
 					<form>
 						<Input
 							value={this.state.topic}
 							onChange={this.handleInputChange}
 							name="topic"
 							placeholder="Topic (required)"
+							style = {styles}
 						/>
 						<Input
 							value={this.state.startYear}
 							onChange={this.handleInputChange}
 							name="startYear"
 							placeholder="Start Year (required)"
+							style = {styles}
 						/>
 						<Input
 							value={this.state.endYear}
 							onChange={this.handleInputChange}
 							name="endYear"
 							placeholder="End Year (required)"
+							style = {styles}
 						/>
 						<FormBtn
 							disabled={!(this.state.topic && this.state.startYear && this.state.endYear)}
 							onClick={this.handleFormSubmit}
+							style = {styles}
 						>Submit
 						</FormBtn>
 					</form>
 				</Row>
 				<Row>
-					<h1>RESULTS:</h1>
+					<h3 style={{textAlign: "center"}}>RESULTS:</h3>
 					{this.state.results.length ? (
 						<List>
 							{this.state.results.map(result => (
@@ -107,7 +116,7 @@ class Articles extends Component {
 							))}
 						</List>
 					) : (
-							<h3>No Results to Display</h3>
+							<h4>No Results to Display</h4>
 						)}
 				</Row>
 			</Container>

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption');
+
+body {
+background-image: url("./images/paper.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+font-family: 'PT Serif Caption', serif;
+}
+
+h3 {
+	color: #577292;
+}
+
+h5 {
+	color: #925772;
+}

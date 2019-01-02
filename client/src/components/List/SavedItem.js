@@ -6,7 +6,7 @@ export const SavedItem = props => (
 	<li className="list-group-item">
 		<Container>
 			<Row>
-				<h3>{props.headline}</h3>
+				<h5>{props.headline}</h5>
 				<p>Published Date: {props.published}</p>
 				<a rel="noreferrer noopener" target="_blank" href={props.href}>
 					Go to Article!

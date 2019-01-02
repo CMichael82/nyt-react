@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => (
-	<nav className="light-blue darken-4">
+	<nav className="navdiv">
 	<div className="nav-wrapper">
 		<a className="brand-logo center" href="/">
 			New York Times Articles</a>

@@ -1,7 +1,7 @@
 .list-overflow-container {
 	max-height: 545px;
-	border: 1px #DDDDDD solid;
-	border-radius: 4px;
+	border: 3px #925772 solid;
+	border-radius: 10px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -10,22 +10,18 @@
 	margin: 0;
 }
 
-.list-overflow-container li {
-	border-radius: 0px;
-	border-left: none;
-	border-right: none;
-}
-
 .list-overflow-container li * {
 	cursor: pointer;
+	padding-bottom: 5px;
 }
 
 .list-overflow-container li a {
-	color: #2A878C;
+	color: #925772;
 }
 
-.list-overflow-container li:first-child {
+.list-overflow-container li:nth-child(even) {
 	border-top: none;
+	background-color: #D4D4D4
 }
 
 .list-overflow-container li:last-child {	

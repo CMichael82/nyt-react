@@ -32,7 +32,7 @@ class Saved extends Component {
 		return (
 			<Container>
 				<Row>
-					<h1>SAVED ARTICLES:</h1>
+					<h3 style={{textAlign: "center"}} >SAVED ARTICLES:</h3>
 					{this.state.article.length ? (
 						<List>
 							{this.state.article.map(saved => (
